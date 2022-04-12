@@ -9,20 +9,23 @@
 // 購入した本数　3　→　飲める本数　4
 // 購入した本数　11　→　飲める本数　16
 
-
 export default function bottleCount(num) {
-    let division = Math.floor(num / 3)
-    let remainder = num % 3
-    let totalDivision = division
-    let totalDivisionRemainder = division + remainder
+    const originalPurchasedBottle = num
+    let presentedBottle = 0
+    let totalPresentedBottle = 0
 
-    while (totalDivisionRemainder >= 3) {
-        division = Math.floor(totalDivisionRemainder / 3)
-        remainder = totalDivisionRemainder % 3
-        totalDivisionRemainder = division + remainder
-        totalDivision += division
+    while (num >= 3) {
+        presentedBottle = Math.floor(num / 3)
+        num = presentedBottle + num % 3
+        totalPresentedBottle += presentedBottle
     }
-    return num + totalDivision
+    return originalPurchasedBottle + totalPresentedBottle
 }
 
-// console.log(bottleCount(100))
+console.log(bottleCount(1))
+console.log(bottleCount(2))
+console.log(bottleCount(3))
+console.log(bottleCount(4))
+console.log(bottleCount(14))
+console.log(bottleCount(100))
+
