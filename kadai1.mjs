@@ -22,10 +22,10 @@ export default function bottleCount(num) {
     return originalPurchasedBottle + totalPresentedBottle
 }
 
-console.log(bottleCount(1))
-console.log(bottleCount(2))
-console.log(bottleCount(3))
-console.log(bottleCount(4))
-console.log(bottleCount(14))
-console.log(bottleCount(100))
+// console.log(bottleCount(1))
+// console.log(bottleCount(2))
+// console.log(bottleCount(3))
+// console.log(bottleCount(4))
+// console.log(bottleCount(14))
+// console.log(bottleCount(100))
 
