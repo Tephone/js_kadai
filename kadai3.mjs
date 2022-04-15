@@ -1,5 +1,5 @@
 import bottleCount from './kadai1.mjs'
-import lowestPrice from "./kadai2.mjs";
+import lowestPrice from "./kadai2.mjs"
 
 // 課題３
 // あるお店では瓶に入ったジュースを1本１００円で売っています。このお店では、空き瓶3本とジュース一本を交換してもらえます。
@@ -20,7 +20,7 @@ function calculateSalesAndStock(purchasedBottle) {
         const price = (stock % 3 === 0) ? lowestPrice(stock - 1) : lowestPrice(stock)
         sales += price
         stock -= bottleCount(price / 100)
-        console.log(`在庫：${stock}本, s売上：${sales}円`)
+        console.log(`在庫：${stock}本, 売上：${sales}円`)
     } else {
         stock -= acquiredBottle
         sales += purchasedBottle * 100
@@ -28,10 +28,7 @@ function calculateSalesAndStock(purchasedBottle) {
     }
 }
 
-calculateSalesAndStock(3)
-calculateSalesAndStock(6)
-calculateSalesAndStock(9)
-calculateSalesAndStock(100)
-
-console.log(lowestPrice(74))
-console.log(bottleCount(50))
+calculateSalesAndStock(3) //在庫：96本, 売上：300円
+calculateSalesAndStock(6) //在庫：88本, 売上：900円
+calculateSalesAndStock(9) //在庫：75本, 売上：1800円
+calculateSalesAndStock(100) //在庫：1本, 売上：6800円
