@@ -17,9 +17,8 @@ let sales = 0
 function calculateSalesAndStock(purchasedBottle) {
     let acquiredBottle = bottleCount(purchasedBottle)
     if (acquiredBottle > stock) {
-        const price = (stock % 3 === 0) ? lowestPrice(stock - 1) : lowestPrice(stock)
-        sales += price
-        stock -= bottleCount(price / 100)
+        sales += stock * 100
+        stock = 0
         console.log(`在庫：${stock}本, 売上：${sales}円`)
     } else {
         stock -= acquiredBottle
@@ -28,7 +27,7 @@ function calculateSalesAndStock(purchasedBottle) {
     }
 }
 
-calculateSalesAndStock(3) //在庫：96本, 売上：300円
-calculateSalesAndStock(6) //在庫：88本, 売上：900円
-calculateSalesAndStock(9) //在庫：75本, 売上：1800円
-calculateSalesAndStock(100) //在庫：1本, 売上：6800円
+calculateSalesAndStock(1) //在庫：99本, 売上：100円
+calculateSalesAndStock(3) //在庫：95本, 売上：400円
+calculateSalesAndStock(20) //在庫：66本, 売上：2400円
+calculateSalesAndStock(100) //在庫：0本, 売上：9000円
